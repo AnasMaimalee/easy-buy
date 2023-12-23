@@ -11,10 +11,17 @@
     <!-- Other scripts -->
 
     <style type="text/css">
+        .whole-content{
+            overflow-y: scroll;
+        }
+        
         .header{
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .exclusive:first-child{
             font-size: xx-large;
@@ -137,7 +144,7 @@
             font-size: x-small;
         }
         .countdown-value{
-            margin-left: 16px;
+            margin-left: 14px;
         }
         .arrows{
             margin-right: -250px;
@@ -147,6 +154,23 @@
             background-color: #ededed;
             border-radius: 50%;
             margin-left: 6px;
+        }
+        .slide-button{
+            border: none;
+            background-color: white;
+        }
+        .slider{
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .slide{
+            display: inline-block;
+            width: calc(100%/4);
+            white-space: normal;
+            vertical-align: top;
         }
         /* media screen andriod  */
         @media screen and (max-width:370px) {
@@ -217,7 +241,6 @@
                     <img class="mySlides"  src="views/images/iphone3.jpeg">
                     <img class="mySlides"  src="views/images/iphone5.jpeg">
                     <img class="mySlides"  src="views/images/iphone1.jpeg">
-
                 </div>
             </div>
             
@@ -257,8 +280,40 @@
                     </div>
                     
                     <div class="arrows">
-                        <i class="bi bi-arrow-left"></i>
-                        <i class="bi bi-arrow-right"></i>
+                        <button class="slide-button" onclick="slide(-1)"><i class="bi bi-arrow-left"></i></button>
+                        <button  class="slide-button" onclick="slide(1)"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="content-images">
+                    <div class="slider">
+                        <div class="slide">
+                            <img src="views/images/handle.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/sofa.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/sunglass.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/chair1.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/shoe.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/chair.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/plasma.jpeg" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="views/images/keyboard.jpeg" alt="">
+                        </div>
+                       
+                    </div>
+                    <div class="view-all-product">
+                        <a href="">View All Produts</a>
                     </div>
                 </div>
             </div>
@@ -315,6 +370,45 @@
                 document.getElementById("cowntdown").innerHTML = "EXPIRED"
             }
         }, 1000)
+
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const slideCount = slides.length;
+        const visibleSlides = 4; // Number of initially visible slides
+        const slidesToShow = slideCount - visibleSlides;
+
+        function showSlides() {
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+
+            for (let i = slideIndex; i < slideIndex + visibleSlides; i++) {
+                if (slides[i]) {
+                    slides[i].style.display = 'inline-block';
+                }
+            }
+        }
+
+        function slide(direction) {
+            slideIndex += direction;
+
+            if (slideIndex < 0) {
+                slideIndex = 0;
+            } else if (slideIndex > slidesToShow) {
+                slideIndex = slidesToShow;
+            }
+
+            showSlides();
+        }
+
+        showSlides();
+
+        document.querySelector('.left-arrow').addEventListener('click', () => slide(-1));
+        document.querySelector('.right-arrow').addEventListener('click', () => slide(1));
+  
+
     </script>
 </body>
 </html>
+
+       
