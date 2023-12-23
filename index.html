@@ -57,6 +57,7 @@
         hr{
             background-color: black;
         }
+
         /* <!-- first part flash sales  --> */
         .first-part{
             /* margin-top: 35px; */
@@ -80,7 +81,6 @@
             background-color: #616161;
             width: 900px;
             height: 300px;
-            border: 1px solid #424242;
             overflow: hidden;
         }
         .right-part img{
@@ -89,6 +89,56 @@
             background-size: cover;
             background-position: center;
         }
+
+        .browse-by-category{
+            margin-top: 30px;
+        }
+        .top{
+           display: flex;
+           margin-left: 85px;
+           justify-content: start;
+           align-items: center;
+        }
+        .top div{
+            border: 8px solid #d32f2f;
+            height: 30px;
+            border-radius: 4px;
+        }
+        .top p{
+            margin-top: 15px;
+            padding-left: 10px;
+            color: #d32f2f;
+            font-family: sans-serif;
+            font-size: medium;
+        }
+        .second-header{
+            display: flex;
+            justify-content: space-around;
+        }
+        #countdown{
+            display: flex;
+            margin-left: -450px;
+        }
+        .flash{
+            margin-top: 10px;
+            margin-left: -200px;
+        }
+        .countdown-value, .p-flash{
+                font-weight: bold;
+                font-size: x-large;
+        }
+
+        .countdown-label, .countdown-value{
+            margin-left: 10px;
+            margin-right: 10px;
+
+        }
+        .countdown-label{
+            font-size: x-small;
+        }
+        .countdown-value{
+            margin-left: 16px;
+        }-
         /* media screen andriod  */
         @media screen and (max-width:370px) {
             .exclusive:first-child{
@@ -110,6 +160,7 @@
             .left-part{
                 display: none;
             }
+           
         }
     </style>
 </head>
@@ -163,10 +214,45 @@
             
         </div>
         <hr>
-
         <!-- second part browse by category -->
         <div class="browse-by-category">
-
+            <div class="second-part">
+                <div class="top">
+                    <div class="border-left"></div>
+                    <p>Today's</p>
+                </div>
+                <div class="second-header">
+                    <div class="flash">
+                        <p class="p-flash">Flash Sales</p>
+                    </div>
+                    <div id="countdown">
+                        <div id="days" class="countdown-item">
+                            <span class="countdown-label">Days</span><br>
+                            <span class="countdown-value"></span>
+                        </div>
+                        <div class="two-dots">:</div>
+                        <div id="hours" class="countdown-item">
+                            <span class="countdown-label">Hours</span><br>
+                            <span class="countdown-value"></span>
+                        </div>
+                        <div class="two-dots">:</div>
+                        <div id="minutes" class="countdown-item">
+                            <span class="countdown-label">Minutes</span><br>
+                            <span class="countdown-value"></span>
+                        </div>
+                        <div class="two-dots">:</div>
+                        <div id="seconds" class="countdown-item">
+                            <span class="countdown-label">Seconds</span><br>
+                            <span class="countdown-value"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="arrors">
+                        <i class="bi bi-arrow-left"></i>
+                        <i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- best selling product  -->
@@ -193,5 +279,33 @@
 
         </div>
     </div>
+    <!-- script  -->
+    <script>
+        const countDownDate = new Date("Dec 31, 2023 23:59:59").getTime();
+
+        const countdown = setInterval(function(){
+            const now = new Date().getTime();
+
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance/(1000*60*60*24));
+            const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+            const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+            const seconds = Math.floor((distance%(1000*60))/1000);
+// Your countdown logic to get days, hours, minutes, seconds...
+
+// Update the countdown elements
+            document.getElementById('days').getElementsByClassName('countdown-value')[0].innerHTML = days;
+            document.getElementById('hours').getElementsByClassName('countdown-value')[0].innerHTML = hours;
+            document.getElementById('minutes').getElementsByClassName('countdown-value')[0].innerHTML = minutes;
+            document.getElementById('seconds').getElementsByClassName('countdown-value')[0].innerHTML = seconds;
+
+            // document.getElementById("countdown").innerHTML  = `0${days}D ${hours}h ${minutes}m ${seconds}s`
+            if(distance < 0 ){
+                clearInterval(countdown);
+                document.getElementById("cowntdown").innerHTML = "EXPIRED"
+            }
+        }, 1000)
+    </script>
 </body>
 </html>
