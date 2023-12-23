@@ -4,8 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Other meta tags and links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Other scripts -->
+
+    <style type="text/css">
+        .header{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .exclusive:first-child{
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        .navs-menu{
+            margin-top: 10px;
+        }
+        .navs-menu a{
+            padding: 10px 25px;
+            text-decoration: none;
+            color: black;
+        }
+        .navs-menu a:hover{
+            border-bottom: 2px solid black;
+        }
+        .header-rigth-end{
+            margin-top: 10px;
+        }
+        .header-rigth-end input{
+            margin-right: 10px;
+            width: 300px;
+            padding: 7px;
+            border:none;
+            background-color: #f5f5f5;
+            background-color: ;
+            border-radius: 10px;
+        }
+        .header-rigth-end :nth-child(2){
+            margin-left: -50px;
+            margin-right: 10px;
+        }
+        .header-rigth-end :nth-child(4){
+            /* margin-left: -10px; */
+        }
+        .header-rigth-end i{
+            padding: 10px;
+        }
+       
+        hr{
+            background-color: black;
+        }
+        /* <!-- first part flash sales  --> */
+        .first-part{
+            /* margin-top: 35px; */
+            
+        }
+        .first-part-content{
+            display: flex;
+            justify-content: space-around;
+        }
+        .left-part{
+            padding-right: 30px;
+            display: grid;
+            justify-content: start;
+        }
+        .left-part a{
+            text-decoration: none;
+            margin-top: 10px;
+            color: black;
+        }
+        .right-part{
+            background-color: #616161;
+            width: 900px;
+            height: 300px;
+            border: 1px solid #424242;
+            overflow: hidden;
+        }
+        .right-part img{
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
 <body>
-    memalee
+    <div class="whole-content">
+        <!-- header  -->
+        <div class="header-section">
+            <div class="header">
+                <div class="exclusive">
+                    <p>Exclusive</p>
+                </div>
+                <div class="navs-menu">
+                    <a href="#">Home</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="#">Sign Up</a>
+                </div>
+                <div class="header-rigth-end">
+                    <input type="text" class="search" placeholder="search">
+                    <i class="bi bi-search"></i>
+                    <i class="bi bi-heart"></i>
+                    <i class="bi bi-cart2"></i>
+                </div>
+            </div>
+        </div>
+    <hr>
+
+        <!-- first part flash sales  -->
+        <div class="first-part">
+            <div class="first-part-content">
+                <div class="left-part">
+                    <a href="">Women's Fashion</a>
+                    <a href="">Men's Fashion</a>
+                    <a href="">Electronics</a>
+                    <a href="">Home & Lifestyle</a>
+                    <a href="">Medicine</a>
+                    <a href="">Sports & Outdoor</a>
+                    <a href="">Baby & Toys</a>
+                    <a href="">Groceries & Pets</a>
+                    <a href="">Health & Beauty</a>
+                </div>
+                <div class="right-part">
+                    <img src="views/images/iphone4.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- second part browse by category -->
+        <div class="browse-by-category">
+
+        </div>
+
+        <!-- best selling product  -->
+        <div class="best-selling-product">
+
+        </div>
+
+        <!-- attractive imag  -->
+        <div class="attractive-image">
+
+        </div>
+
+        <!-- explore our products  -->
+        <div class="explore-our-products">
+
+        </div>
+
+        <!-- new arrival  -->
+        <div class="new-arrival">
+
+        </div>
+        <!-- footer  -->
+        <div class="footer">
+
+        </div>
+    </div>
 </body>
 </html>
