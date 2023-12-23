@@ -161,17 +161,35 @@
         }
         .slider{
             display: flex;
+            justify-content: space-around;
             overflow: hidden;
             white-space: nowrap;
             width: 80%;
             margin: 0 auto;
         }
-        .slide{
-            display: inline-block;
-            width: calc(100%/4);
+        .slide img{
+            display: flex;
+            padding: 10px;
+            width: 200px;
             white-space: normal;
             vertical-align: top;
+            background-color: #ededed;
+            margin: 10px;
+            align-items: center;
+            height: 200px;
         }
+       .add-to-cart a{
+        padding: 10px;
+        background-color: #616161;
+        width: 200px;
+        margin-top: -10px;
+        margin-left: 10px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        color: #f5f5f5;
+        font-weight: bolder;
+       }
         /* media screen andriod  */
         @media screen and (max-width:370px) {
             .exclusive:first-child{
@@ -246,6 +264,7 @@
             
         </div>
         <hr>
+        
         <!-- second part browse by category -->
         <div class="browse-by-category">
             <div class="second-part">
@@ -288,27 +307,41 @@
                     <div class="slider">
                         <div class="slide">
                             <img src="views/images/handle.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                         <div class="slide">
                             <img src="views/images/sofa.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                         <div class="slide">
                             <img src="views/images/sunglass.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
                         </div>
                         <div class="slide">
                             <img src="views/images/chair1.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                         <div class="slide">
                             <img src="views/images/shoe.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                         <div class="slide">
                             <img src="views/images/chair.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
                         </div>
                         <div class="slide">
                             <img src="views/images/plasma.jpeg" alt="">
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                         <div class="slide">
-                            <img src="views/images/keyboard.jpeg" alt="">
+                            <img src="views/images/keyboard.jpeg" alt=""> 
+                            <span class="add-to-cart"><a href="">Add To Cart</a></span>
+
                         </div>
                        
                     </div>
@@ -410,5 +443,3 @@
     </script>
 </body>
 </html>
-
-       
